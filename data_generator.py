@@ -15,7 +15,7 @@ class DataGenerator:
             shape = (points_per_cluster, self.dim)
             mean_x = np.random.uniform(0, 100)  # Mean for the x dimension
             mean_y = np.random.uniform(0, 100)  # Mean for the y dimension
-            cluster = np.random.normal([mean_x, mean_y], np.random.uniform(1, 20), size=shape)
+            cluster = np.random.normal([mean_x, mean_y], np.random.uniform(1, 15), size=shape)
             np_data = np.concatenate((np_data, cluster), axis=0)
 
         self.data = pd.DataFrame(np_data)

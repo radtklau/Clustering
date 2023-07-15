@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 if __name__ == "__main__":
-    data_gen = DataGenerator(500, 2, 10)
+    data_gen = DataGenerator(500, 2, 5)
     data_gen.gen_data()
     data = data_gen.get_data()
 
