@@ -11,7 +11,7 @@ class DataGenerator:
     def gen_data(self):
         points_per_cluster = self.n // self.num_clusters
         np_data = np.empty((0, 2))
-        for i in range(self.num_clusters):
+        for _ in range(self.num_clusters): #TODO remove for loop
             shape = (points_per_cluster, self.dim)
             mean_x = np.random.uniform(0, 100)  # Mean for the x dimension
             mean_y = np.random.uniform(0, 100)  # Mean for the y dimension
