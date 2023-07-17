@@ -39,6 +39,23 @@ class KMeansClusterer:
         x2, y2 = b
         distance = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
         return distance
+    
+    def calc_closest_centroid(self):
+        for point in self.data:
+            min_dist = 100000000
+            closest_centroid = 0
+            for label, centroid in enumerate(self.centroids):
+                a = (point[0], point[1])
+                b = (centroid[0], centroid[1])
+                dist = self.calc_dist(a, b)
+                if dist < min_dist:
+                    closest_centroid = label
+                    min_dist = dist
+            point[2] = closest_centroid
+                
+    def calc_cluster_mean(self):
+        pass
+                
         
             
         
