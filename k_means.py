@@ -53,8 +53,17 @@ class KMeansClusterer:
                     min_dist = dist
             point[2] = closest_centroid
                 
-    def calc_cluster_mean(self):
-        pass
+    def update_centroids(self):
+        aux_array = []
+        for i in range(self.k):
+            aux_array.append([0, 0, 0])
+        for i, point in enumerate(self.data):
+            aux_array[point[2]][0] += point[0]
+            aux_array[point[2]][1] += point[1]
+            aux_array[point[2]][1] += 1
+            
+        #TODO
+            
                 
         
             
