@@ -70,13 +70,9 @@ class KMeansClusterer:
             
     def kmeans(self):
         self.prepare_data()
-        print(self.data[:10])
         for i in range(100):
             self.calc_closest_centroid()
-            print(self.data[:10])
             self.update_centroids()
-            print(self.data[:10])
-            break
             
     def get_data(self):
         return self.data
