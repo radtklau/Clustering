@@ -9,14 +9,13 @@ if __name__ == "__main__":
     data = data_gen.get_data()
 
     clusterer = KMeansClusterer(3, data)
-    clusterer.prepare_data()
+    clusterer.kmeans()
     
-    """
-    plt.scatter(data[0], data[1])
+
+    plt.scatter(data[:, 0], data[:, 1], c=data[:, 2])
     plt.xlabel('X')
     plt.ylabel('Y')
     plt.title('Scatter Plot')
 
     # Show the plot
     plt.show()
-    """
