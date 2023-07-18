@@ -56,29 +56,30 @@ class KMeansClusterer:
     def update_centroids(self):
         aux_array = []
         for _ in range(self.k): #add one array for each centroid
-            aux_array.append([0, 0, 0]) #x values, y values, count to calc mean
+            aux_array.append([0, 0, 1]) #x values, y values, count to calc mean
             
         for point in self.data:
-            aux_array[point[2]][0] += point[0]
-            aux_array[point[2]][1] += point[1]
-            aux_array[point[2]][1] += 1
+            aux_array[int(point[2])][0] += point[0]
+            aux_array[int(point[2])][1] += point[1]
+            aux_array[int(point[2])][2] += 1
         
         for i, centroid in enumerate(aux_array):
             new_x = centroid[0] / centroid[2]
             new_y = centroid[1] / centroid[2]
             self.centroids[i] = np.array([new_x, new_y])
             
-        for point in self.data:
-            ind = point[2]
-            centroid = self.centroids[ind]
-            point[0] = centroid[0]
-            point[1] = centroid[1]
-            
     def kmeans(self):
         self.prepare_data()
+        print(self.data[:10])
         for i in range(100):
             self.calc_closest_centroid()
+            print(self.data[:10])
             self.update_centroids()
+            print(self.data[:10])
+            break
+            
+    def get_data(self):
+        return self.data
         
                 
             

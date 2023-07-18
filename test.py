@@ -10,6 +10,8 @@ if __name__ == "__main__":
 
     clusterer = KMeansClusterer(3, data)
     clusterer.kmeans()
+    data = clusterer.get_data()
+    #print(data[:100])
     
 
     plt.scatter(data[:, 0], data[:, 1], c=data[:, 2])
