@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from k_means import KMeansClusterer
 
 if __name__ == "__main__":
-    data_gen = DataGenerator(500, 2, 5)
+    data_gen = DataGenerator(1500, 2, 3)
     data_gen.gen_data()
     data = data_gen.get_data()
 
@@ -14,7 +14,7 @@ if __name__ == "__main__":
     #print(data[:100])
     
 
-    plt.scatter(data[:, 0], data[:, 1], c=data[:, 2])
+    plt.scatter(data[:, 0], data[:, 1], c=data[:, 2], s=5)
     plt.xlabel('X')
     plt.ylabel('Y')
     plt.title('Scatter Plot')
