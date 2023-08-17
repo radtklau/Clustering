@@ -4,11 +4,11 @@ import matplotlib.pyplot as plt
 from k_means import KMeansClusterer
 
 if __name__ == "__main__":
-    data_gen = DataGenerator(1500, 2, 3)
+    data_gen = DataGenerator(1500, 2, 2)
     data_gen.gen_data()
     data = data_gen.get_data()
 
-    clusterer = KMeansClusterer(3, data)
+    clusterer = KMeansClusterer(5, data)
     clusterer.kmeans()
     data = clusterer.get_data()
     #print(data[:100])
