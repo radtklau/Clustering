@@ -1,5 +1,4 @@
 from data_generator import DataGenerator
-import pandas as pd
 import matplotlib.pyplot as plt
 from k_means import KMeansClusterer
 
@@ -12,7 +11,6 @@ if __name__ == "__main__":
     clusterer.kmeans()
     data = clusterer.get_data()
     #print(data[:100])
-    
 
     plt.scatter(data[:, 0], data[:, 1], c=data[:, 2], s=5)
     plt.xlabel('X')
